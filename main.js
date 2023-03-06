@@ -67,8 +67,8 @@ const startQuestions = [
 		antiWaysForEvol: ["design"],
 	},
 	{
-		question: "Вы любите математику?",
-		answers: ["Да","Нет"],
+		question: "Вы любите математику? 2+2x2 = ...",
+		answers: ["6","8"],
 		waysForEvol: ["programm"],
 		antiWaysForEvol: ["design"],
 	},
@@ -82,13 +82,13 @@ const programmQuestions = [
 	},
 	{
 		question: "Вы разносторонний человек?",
-		answers: ["Да","Нет"],
+		answers: ["Да, не люблю зацикливаться на одном","Нет, я предпочитаю заниматься одним делом"],
 		waysForEvol: ["ACS"],
 		antiWaysForEvol: ["CSE"],
 	},
 	{
 		question: "Вы хорошо разбираетесь в комплектующих ПК?",
-		answers: ["Да","Нет"],
+		answers: ["Да, осведомлён","Процессор от видеокарты отличю, но не углублялся", "Нет, я в этом не разбираюсь"],
 		waysForEvol: ["CSE"],
 		antiWaysForEvol: ["ACS","IFST","SE"],
 	},
@@ -127,7 +127,7 @@ const designQuestions = [
 	},
 	{
 		question: "Вы любите киносъёмку, подбор кадра и т.п.?",
-		answers: ["Да","Нет"],
+		answers: ["Да, мне это нравится","Нет, не моё"],
 		waysForEvol: ["Television"],
 		antiWaysForEvol: ["APR", "DesignWay"],
 	},
@@ -179,7 +179,6 @@ function showQuestion(){
 
 
 function checkAnswer(){
-	console.log('chckAnswer start');
 	// находим выбранную радиокнопку
 	const checkedRadio = listContainer.querySelector('input[type="radio"]:checked');
 	
@@ -193,7 +192,7 @@ function checkAnswer(){
 	// checkedRadio.value -> значение value  кнопки  pasrseInt(peremenn) -> пропарсить в int
 	// massivName[Index][Значение] -> Получение данных
 	upScore(parseInt(checkedRadio.value));
-	console.log(directionMap);
+
 	if(questionIndex !== currQuestions.length -1 && massStage<=2){
 		questionIndex++;
 		clearPage();
